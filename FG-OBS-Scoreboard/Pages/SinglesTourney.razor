@@ -1,0 +1,75 @@
+﻿@page "/singlestourney"
+
+<PageTitle>Singles Tourney</PageTitle>
+<h3>Singles Tourney</h3><br />
+
+<label>Player 1</label>
+<input placeholder="Player 1 name" @bind="info[0]" /><br />
+<button @onclick="() => info[1] = UpdateScore(info[1], -1)">-</button>
+<input placeholder="Player 1 score" @bind="info[1]" />
+<button @onclick="() => info[1] = UpdateScore(info[1], 1)">+</button><br /><br />
+
+<label>Player 2</label>
+<input placeholder="Player 2 name" @bind="info[2]" /><br />
+<button @onclick="() => info[3] = UpdateScore(info[3], -1)">-</button>
+<input placeholder="Player 2 score" @bind="info[3]" />
+<button @onclick="() => info[3] = UpdateScore(info[3], 1)">+</button><br /><br />
+
+<label>Match Info</label>
+<input placeholder="Match info" @bind="info[4]" /><br /><br />
+
+<button @onclick="UpdateAll">Update</button>
+<button @onclick="SwitchPlayers">Switch</button>
+<button @onclick="Clear">Clear</button>
+
+@code {
+	string[] info = new string[5];
+
+	private void UpdateAll()
+	{
+		string assemblypath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+		string workingpath = System.IO.Path.GetDirectoryName(assemblypath);
+
+		string[] filepaths = new string[5]
+		{
+			workingpath + "\\Output\\p1.txt",
+			workingpath + "\\Output\\p1scr.txt",
+			workingpath + "\\Output\\p2.txt",
+			workingpath + "\\Output\\p2scr.txt",
+			workingpath + "\\Output\\matchinfo.txt"
+		};
+
+		if (!System.IO.Directory.Exists(workingpath + "\\Output"))
+		{
+			System.IO.Directory.CreateDirectory(workingpath + "\\Output");
+		}
+
+		for (int i = 0; i < 5; i++)
+		{
+			using (StreamWriter writer = new StreamWriter(filepaths[i]))
+			{
+				writer.WriteLine(info[i]);
+			}
+		}
+	}
+
+	private void SwitchPlayers()
+	{
+		(info[0], info[2]) = (info[2], info[0]);
+		(info[1], info[3]) = (info[3], info[1]);
+	}
+
+	private void Clear()
+	{
+		Array.Clear(info, 0, 5);
+		info[1] = "0";
+		info[3] = "0";
+	}
+
+	private string UpdateScore(string score, int dir)
+	{
+		int intscore = Int32.Parse(score);
+		intscore += dir;
+		return intscore.ToString();
+	}
+}
