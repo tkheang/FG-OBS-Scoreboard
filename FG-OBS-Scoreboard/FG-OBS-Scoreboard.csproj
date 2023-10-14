@@ -5,6 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>FG_OBS_Scoreboard</RootNamespace>
+    <Version>$(VersionPrefix)</Version>
+    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>

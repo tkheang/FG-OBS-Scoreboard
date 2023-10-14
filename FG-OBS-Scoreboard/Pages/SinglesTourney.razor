@@ -1,29 +1,26 @@
 ﻿@page "/singlestourney"
 
-<PageTitle>Singles Tourney</PageTitle>
-<h3>Singles Tourney</h3><br />
-
-<label>Player 1</label>
-<input placeholder="Player 1 name" @bind="info[0]" /><br />
-<button @onclick="() => info[1] = UpdateScore(info[1], -1)">-</button>
-<input placeholder="Player 1 score" @bind="info[1]" />
-<button @onclick="() => info[1] = UpdateScore(info[1], 1)">+</button><br /><br />
-
-<label>Player 2</label>
-<input placeholder="Player 2 name" @bind="info[2]" /><br />
-<button @onclick="() => info[3] = UpdateScore(info[3], -1)">-</button>
-<input placeholder="Player 2 score" @bind="info[3]" />
-<button @onclick="() => info[3] = UpdateScore(info[3], 1)">+</button><br /><br />
-
-<label>Match Info</label>
-<input placeholder="Match info" @bind="info[4]" /><br /><br />
-
-<button @onclick="UpdateAll">Update</button>
-<button @onclick="SwitchPlayers">Switch</button>
-<button @onclick="Clear">Clear</button>
-
 @code {
-	string[] info = new string[5];
+	string p1Name = "";
+	string p2Name = "";
+	string p1Score = "";
+	string p2Score = "";
+	string matchInfo = "";
+
+	Task InitPage()
+	{
+		p1Name = "";
+		p2Name = "";
+		p1Score = "0";
+		p2Score = "0";
+		matchInfo = "";
+		return Task.CompletedTask;
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		await InitPage();
+	}
 
 	private void UpdateAll()
 	{
@@ -48,28 +45,56 @@
 		{
 			using (StreamWriter writer = new StreamWriter(filepaths[i]))
 			{
-				writer.WriteLine(info[i]);
+				switch (i)
+				{
+					case 0:
+						writer.WriteLine(p1Name);
+						break;
+					case 1:
+						writer.WriteLine(p1Score);
+						break;
+					case 2:
+						writer.WriteLine(p2Name);
+						break;
+					case 3:
+						writer.WriteLine(p2Score);
+						break;
+					case 4:
+						writer.WriteLine(matchInfo);
+						break;
+					default:
+						break;
+				}
 			}
 		}
 	}
 
 	private void SwitchPlayers()
 	{
-		(info[0], info[2]) = (info[2], info[0]);
-		(info[1], info[3]) = (info[3], info[1]);
+		(p1Name, p2Name) = (p2Name, p1Name);
+		(p1Score, p2Score) = (p2Score, p1Score);
 	}
 
 	private void Clear()
 	{
-		Array.Clear(info, 0, 5);
-		info[1] = "0";
-		info[3] = "0";
-	}
-
-	private string UpdateScore(string score, int dir)
-	{
-		int intscore = Int32.Parse(score);
-		intscore += dir;
-		return intscore.ToString();
+		InitPage();
 	}
 }
+
+<PageTitle>Singles Tourney</PageTitle>
+<h3>Singles Tourney</h3><br />
+
+<label>Player 1</label>
+<input @bind="p1Name" /><br />
+<input type="number" style="width:150px" @bind="p1Score" /><br />
+
+<label>Player 2</label>
+<input @bind="p2Name" /><br />
+<input type="number" @bind="p2Score" /><br />
+
+<label>Match Info</label>
+<input @bind="matchInfo" /><br /><br />
+
+<button @onclick="UpdateAll">Update</button>
+<button @onclick="SwitchPlayers">Switch</button>
+<button @onclick="Clear">Clear</button>

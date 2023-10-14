@@ -1,0 +1,7 @@
+C:\Users\timkh\Source\Repos\tkheang\FG-OBS-Scoreboard\FG-OBS-Scoreboard\obj\Release\net7.0\win-x64\PubTmp\Out\FG-OBS-Scoreboard.exe
+C:\Users\timkh\Source\Repos\tkheang\FG-OBS-Scoreboard\FG-OBS-Scoreboard\obj\Release\net7.0\win-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\timkh\Source\Repos\tkheang\FG-OBS-Scoreboard\FG-OBS-Scoreboard\obj\Release\net7.0\win-x64\PubTmp\Out\appsettings.json
+C:\Users\timkh\Source\Repos\tkheang\FG-OBS-Scoreboard\FG-OBS-Scoreboard\obj\Release\net7.0\win-x64\PubTmp\Out\FG-OBS-Scoreboard.dll
+C:\Users\timkh\Source\Repos\tkheang\FG-OBS-Scoreboard\FG-OBS-Scoreboard\obj\Release\net7.0\win-x64\PubTmp\Out\FG-OBS-Scoreboard.deps.json
+C:\Users\timkh\Source\Repos\tkheang\FG-OBS-Scoreboard\FG-OBS-Scoreboard\obj\Release\net7.0\win-x64\PubTmp\Out\FG-OBS-Scoreboard.runtimeconfig.json
+C:\Users\timkh\Source\Repos\tkheang\FG-OBS-Scoreboard\FG-OBS-Scoreboard\obj\Release\net7.0\win-x64\PubTmp\Out\FG-OBS-Scoreboard.pdb
