@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\FG-OBS-Scoreboard.props" />
-</Project>

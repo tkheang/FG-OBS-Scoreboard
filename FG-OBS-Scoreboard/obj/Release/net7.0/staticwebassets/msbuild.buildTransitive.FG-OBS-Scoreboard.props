@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\FG-OBS-Scoreboard.props" />
-</Project>
