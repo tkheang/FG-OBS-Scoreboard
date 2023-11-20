@@ -7,7 +7,7 @@ Windows 10/11
 * Download and install the Hosting Bundle as recommended by Microsoft.
 
 # Usage
-1. Download the latest release and extract the folder. Run the program "FG-OBS-Scoreboard.exe".
+1. [Download the latest release](https://github.com/tkheang/FG-OBS-Scoreboard/releases) and extract the folder. Run the program "FG-OBS-Scoreboard.exe".
 2. A console window should open.
    
    ![image](https://github.com/tkheang/FG-OBS-Scoreboard/assets/15349500/c8d0c7be-2fd7-4861-8ca2-d8e0cbc16e57)
