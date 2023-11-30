@@ -1,10 +1,17 @@
 # FG OBS Scoreboard
-This is a simple scoreboard app for OBS. Since it's run in the browser, it can be docked in OBS using Custom Browser Docks. Functionality is based on [SBE - ScoreBoard Edit](https://obsproject.com/forum/resources/sbe-scoreboard-edit.83/).
-# Requirements
-Windows 10/11 
+This is a simple scoreboard app for OBS (Open Broadcaster Software). Since it's run in the browser, it can be docked in OBS using Custom Browser Docks. Functionality is based on [SBE - ScoreBoard Edit](https://obsproject.com/forum/resources/sbe-scoreboard-edit.83/).
 
-[ASP.NET Core Runtime 7 for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)  
-* Download and install the Hosting Bundle as recommended by Microsoft.
+Features:
+   * Web UI with options for singles and team tourneys
+   * Output names, scores, and match info to text files, which can then be added to OBS using text sources and the "read from file" option
+
+# Requirements
+* Windows 10/11 
+
+* [ASP.NET Core Runtime 7 for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)  
+   * Download and install the Hosting Bundle as recommended by Microsoft.
+  
+     ![image](https://github.com/tkheang/FG-OBS-Scoreboard/assets/15349500/94051270-71e0-4015-a9d4-9564254b4d8c)
 
 # Usage
 1. [Download the latest release](https://github.com/tkheang/FG-OBS-Scoreboard/releases) and extract the folder. Run the program "FG-OBS-Scoreboard.exe".
@@ -45,3 +52,5 @@ Windows 10/11
    Scores can be incremented/decremented by clicking on the up/down arrows in each score entry box.
 
    ![image](https://github.com/tkheang/FG-OBS-Scoreboard/assets/15349500/c568320e-a33c-4cbb-bc7c-141a0e6cd1bd)
+
+9. Experiment with "edit transform" options for each text source to make sure it scales and aligns properly within the scene.
