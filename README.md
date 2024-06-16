@@ -8,9 +8,6 @@ Features:
 # Requirements
 * Windows 10/11 
 
-* [ASP.NET Core Runtime 7 for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)  
-   * Download and install the Hosting Bundle as recommended by Microsoft.
-
 # Usage
 1. [Download the latest release](https://github.com/tkheang/FG-OBS-Scoreboard/releases) and extract the folder. Run the program "FG-OBS-Scoreboard.exe". A console window should open.
 2. In OBS, click "Docks, Custom Browser Docks...".
